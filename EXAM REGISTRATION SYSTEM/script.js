@@ -1,0 +1,9 @@
+function readForm(f){const d={};new FormData(f).forEach((v,k)=>d[k]=v);return d}
+function save(n,f){localStorage.setItem("demoForm"+n,JSON.stringify(readForm(f)))}
+function get(n){try{return JSON.parse(localStorage.getItem("demoForm"+n)||"{}")}catch(e){return {}}}
+function msg(id,t){const e=document.getElementById(id);if(e)e.textContent=t}
+const login=document.getElementById("loginForm");
+if(login)login.addEventListener("submit",e=>{e.preventDefault();if(document.getElementById("username").value.trim()==="applicant"&&document.getElementById("password").value==="demo123"){localStorage.setItem("demoLoggedIn","yes");location.href="form1.html"}else msg("loginMessage","Incorrect username or password. Please try again.")});
+for(let i=1;i<=3;i++){const f=document.getElementById("form"+i);if(f){if(localStorage.getItem("demoLoggedIn")!=="yes")location.href="index.html";const old=get(i);Object.keys(old).forEach(k=>{if(f.elements[k])f.elements[k].value=old[k]});f.addEventListener("submit",e=>{e.preventDefault();save(i,f);if(i<3)location.href="form"+(i+1)+".html";else{document.getElementById("applicationNumber").textContent="DEMO-"+Math.floor(100000+Math.random()*900000);document.getElementById("confirmation").classList.remove("hidden");f.classList.add("hidden")}})}}
+const view=document.getElementById("viewSummary");if(view)view.addEventListener("click",()=>{const box=document.getElementById("summary");box.innerHTML="";for(let i=1;i<=3;i++){const h=document.createElement("h3");h.textContent="Form "+i;box.appendChild(h);Object.entries(get(i)).forEach(([k,v])=>{const p=document.createElement("p");p.textContent=k.replace(/([A-Z])/g," $1").replace(/^./,c=>c.toUpperCase())+": "+v;box.appendChild(p)})}box.classList.toggle("hidden")});
+const again=document.getElementById("startAgain");if(again)again.addEventListener("click",()=>{["demoForm1","demoForm2","demoForm3"].forEach(k=>localStorage.removeItem(k));location.href="form1.html"});
