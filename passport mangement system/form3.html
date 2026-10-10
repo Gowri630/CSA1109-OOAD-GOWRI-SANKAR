@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 3 - Passport Details & Submission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="step">Step 3 of 3</div>
+    <h1>Form 3: Passport Details</h1>
+    <p class="subtitle">Complete the application and submit all three forms.</p>
+    <form id="form3">
+      <div class="grid">
+        <div><label for="applicationType">Application type</label><select id="applicationType" name="applicationType" required><option value="">Select</option><option>Fresh Passport</option><option>Passport Renewal</option></select></div>
+        <div><label for="bookletType">Booklet type</label><select id="bookletType" name="bookletType" required><option value="">Select</option><option>36 pages</option><option>60 pages</option></select></div>
+      </div>
+      <label for="reason">Reason for application</label><select id="reason" name="reason" required><option value="">Select</option><option>Education</option><option>Employment</option><option>Tourism</option><option>Other</option></select>
+      <label class="check-row"><input id="declaration" type="checkbox" required> I confirm that the information provided is correct.</label>
+      <div class="actions"><a class="button secondary" href="form2.html">Previous</a><button type="submit">Submit All Forms</button></div>
+      <p id="form3Message" class="message"></p>
+    </form>
+    <section id="confirmation" class="confirmation hidden">
+      <h2>Application Submitted</h2>
+      <p>Your demo application has been submitted successfully.</p>
+      <p><b>Demo application number:</b> <span id="applicationNumber"></span></p>
+      <p class="small-note">This is a student demonstration only. It does not send data to a real passport office or verify documents with a central government computer.</p>
+      <button type="button" id="viewSummary">View Submitted Details</button>
+      <div id="summary" class="summary hidden"></div>
+      <button type="button" class="secondary-button" id="startAgain">Start New Application</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

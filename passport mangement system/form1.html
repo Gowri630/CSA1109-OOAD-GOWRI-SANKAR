@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 1 - Personal Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="step">Step 1 of 3</div>
+    <h1>Form 1: Personal Details</h1>
+    <p class="subtitle">Enter the applicant's basic information.</p>
+    <form id="form1">
+      <div class="grid">
+        <div><label for="fullName">Full name</label><input id="fullName" name="fullName" required></div>
+        <div><label for="dob">Date of birth</label><input id="dob" name="dob" type="date" required></div>
+        <div><label for="gender">Gender</label><select id="gender" name="gender" required><option value="">Select</option><option>Female</option><option>Male</option><option>Other</option></select></div>
+        <div><label for="nationality">Nationality</label><input id="nationality" name="nationality" value="Indian" required></div>
+      </div>
+      <div class="actions"><a class="button secondary" href="index.html">Back to Login</a><button type="submit">Save & Continue</button></div>
+      <p id="form1Message" class="message"></p>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

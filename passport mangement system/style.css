@@ -1,0 +1,48 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; padding: 28px 14px;
+  font-family: Arial, Helvetica, sans-serif; background: #f3f6fa; color: #263445;
+  display: flex; justify-content: center; align-items: center;
+}
+.card {
+  width: 100%; max-width: 720px; background: #fff; padding: 30px;
+  border: 1px solid #e1e7ef; border-radius: 12px; box-shadow: 0 5px 18px rgba(30, 55, 90, .08);
+}
+.login-card { max-width: 420px; }
+h1 { margin: 0 0 8px; font-size: 25px; color: #173b67; }
+h2 { color: #17633b; }
+.subtitle { margin: 0 0 24px; color: #667487; line-height: 1.5; }
+.step { color: #1768ac; font-size: 13px; font-weight: bold; margin-bottom: 10px; }
+label { display: block; margin: 14px 0 6px; font-size: 14px; font-weight: bold; }
+input, select, textarea {
+  width: 100%; padding: 11px 12px; border: 1px solid #cbd5e1; border-radius: 6px;
+  font: inherit; background: #fff;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid #c5e2ff; border-color: #3985c6; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+button, .button {
+  display: inline-block; border: 0; border-radius: 6px; padding: 11px 16px;
+  background: #1768ac; color: white; font: inherit; font-weight: bold; text-decoration: none;
+  cursor: pointer; text-align: center;
+}
+button:hover, .button:hover { background: #10568f; }
+form > button { width: 100%; margin-top: 20px; }
+.actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; }
+.actions button, .actions .button { flex: 1; }
+.secondary { background: #e8eef5; color: #29445f; }
+.secondary:hover { background: #d8e2ed; }
+.message { color: #b42318; font-size: 14px; min-height: 16px; }
+.hint, .small-note { color: #68778a; font-size: 12px; line-height: 1.5; margin-top: 18px; }
+.check-row { display: flex; align-items: flex-start; gap: 9px; font-weight: normal; line-height: 1.4; }
+.check-row input { width: auto; margin-top: 2px; }
+.confirmation { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e1e7ef; }
+.hidden { display: none; }
+.summary { margin: 15px 0; padding: 14px; background: #f5f8fb; border-radius: 6px; overflow-wrap: anywhere; }
+.summary p { margin: 8px 0; }
+.secondary-button { margin-top: 10px; background: #e8eef5; color: #29445f; }
+@media (max-width: 540px) {
+  .card { padding: 22px 18px; }
+  .grid { grid-template-columns: 1fr; }
+  h1 { font-size: 22px; }
+  .actions { flex-direction: column-reverse; }
+}
